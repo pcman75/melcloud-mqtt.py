@@ -11,6 +11,7 @@ import time
 import math
 import sys
 import os
+import inspect
 from datetime import datetime
 # from inspect import getmembers
 # from pprint import pprint
@@ -162,7 +163,8 @@ def mqtt_water_control_config(uid):
 
 async def main():
 
-    config = json.load(open(os.getenv("HOME", ".")+"/.melcloudrc.json"))
+    path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+    config = json.load(open(path + "/.melcloudrc.json"))
 
     q = Queue()
 

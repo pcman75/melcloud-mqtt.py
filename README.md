@@ -11,9 +11,12 @@ no easy way to test it, so won't develop it unless someone is able and willing t
 
 Device autodiscovery works with Domoticz and should work with Home Assistant.
 
-Copy the sample.melcloudrc.json to $HOME/.melcloudrc.json and enter what I hope are obvious details,
+1. pip install -r requirements.txt
+2. Copy the sample.melcloudrc.json to .melcloudrc.json and enter what I hope are obvious details,
 then run the script with python3.  Once it's confirmed working, you'll probably want to add it
 to systemd or similar.
+
+3. docker compose up --build
 
 If you don't want the script to POST the data to an emoncms, then delete that section
 from .melcloudrc.json and it should simply skip that action.
